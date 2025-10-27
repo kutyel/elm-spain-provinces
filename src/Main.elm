@@ -273,42 +273,42 @@ isPlaying model =
 
 allProvinces : List Province
 allProvinces =
-    [ { name = "La Coruña", id = 1, status = NotAsked }
-    , { name = "Álava", id = 2, status = NotAsked }
+    [ { name = "La Coruña/A Coruña/Coruna", id = 1, status = NotAsked }
+    , { name = "Álava/Araba/Alava", id = 2, status = NotAsked }
     , { name = "Albacete", id = 3, status = NotAsked }
-    , { name = "Alicante", id = 4, status = NotAsked }
-    , { name = "Almería", id = 5, status = NotAsked }
+    , { name = "Alicante/Alacant", id = 4, status = NotAsked }
+    , { name = "Almería/Almeria", id = 5, status = NotAsked }
     , { name = "Asturias", id = 6, status = NotAsked }
-    , { name = "Ávila", id = 7, status = NotAsked }
+    , { name = "Ávila/Avila", id = 7, status = NotAsked }
     , { name = "Badajoz", id = 8, status = NotAsked }
-    , { name = "Baleares", id = 9, status = NotAsked }
+    , { name = "Islas Baleares/Balears", id = 9, status = NotAsked }
     , { name = "Barcelona", id = 10, status = NotAsked }
-    , { name = "Vizcaya", id = 11, status = NotAsked }
+    , { name = "Vizcaya/Bizkaia", id = 11, status = NotAsked }
     , { name = "Burgos", id = 12, status = NotAsked }
-    , { name = "Cáceres", id = 13, status = NotAsked }
-    , { name = "Cádiz", id = 14, status = NotAsked }
+    , { name = "Cáceres/Caceres", id = 13, status = NotAsked }
+    , { name = "Cádiz/Cadiz", id = 14, status = NotAsked }
     , { name = "Cantabria", id = 15, status = NotAsked }
-    , { name = "Castellón", id = 16, status = NotAsked }
+    , { name = "Castellón/Castellon", id = 16, status = NotAsked }
     , { name = "Ciudad Real", id = 17, status = NotAsked }
-    , { name = "Córdoba", id = 18, status = NotAsked }
+    , { name = "Córdoba/Cordoba", id = 18, status = NotAsked }
     , { name = "Cuenca", id = 19, status = NotAsked }
-    , { name = "Guipúzcoa", id = 20, status = NotAsked }
-    , { name = "Gerona", id = 21, status = NotAsked }
+    , { name = "Guipúzcoa/Guiuzcoa/Gipuzkoa", id = 20, status = NotAsked }
+    , { name = "Gerona/Girona", id = 21, status = NotAsked }
     , { name = "Granada", id = 22, status = NotAsked }
     , { name = "Guadalajara", id = 23, status = NotAsked }
     , { name = "Huelva", id = 24, status = NotAsked }
     , { name = "Huesca", id = 25, status = NotAsked }
-    , { name = "Jaén", id = 26, status = NotAsked }
+    , { name = "Jaén/Jaen", id = 26, status = NotAsked }
     , { name = "La Rioja", id = 27, status = NotAsked }
     , { name = "Las Palmas", id = 28, status = NotAsked }
-    , { name = "León", id = 29, status = NotAsked }
-    , { name = "Lérida", id = 30, status = NotAsked }
+    , { name = "León/Jeon", id = 29, status = NotAsked }
+    , { name = "Lérida/Lerida/Lleida", id = 30, status = NotAsked }
     , { name = "Lugo", id = 31, status = NotAsked }
     , { name = "Madrid", id = 32, status = NotAsked }
-    , { name = "Málaga", id = 33, status = NotAsked }
+    , { name = "Málaga/Malaga", id = 33, status = NotAsked }
     , { name = "Murcia", id = 34, status = NotAsked }
-    , { name = "Navarra", id = 35, status = NotAsked }
-    , { name = "Orense", id = 36, status = NotAsked }
+    , { name = "Navarra/Nafarroa", id = 35, status = NotAsked }
+    , { name = "Orense/Ourense", id = 36, status = NotAsked }
     , { name = "Palencia", id = 37, status = NotAsked }
     , { name = "Pontevedra", id = 38, status = NotAsked }
     , { name = "Salamanca", id = 39, status = NotAsked }
@@ -319,7 +319,7 @@ allProvinces =
     , { name = "Tarragona", id = 44, status = NotAsked }
     , { name = "Teruel", id = 45, status = NotAsked }
     , { name = "Toledo", id = 46, status = NotAsked }
-    , { name = "Valencia", id = 47, status = NotAsked }
+    , { name = "Valencia/València", id = 47, status = NotAsked }
     , { name = "Valladolid", id = 48, status = NotAsked }
     , { name = "Zamora", id = 49, status = NotAsked }
     , { name = "Zaragoza", id = 50, status = NotAsked }
