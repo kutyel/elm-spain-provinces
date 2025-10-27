@@ -1,3 +1,6 @@
-import { Elm } from './Main.elm'
+import { Elm } from "./Main.elm";
+import { inject } from "@vercel/analytics";
 
-Elm.Main.init({ node: document.getElementById("root") })
+inject();
+
+Elm.Main.init({ node: document.getElementById("root") });
