@@ -884,6 +884,32 @@ view model =
                                             ++ fillColor 14 provinces
                                         )
                                         []
+                                    , Svg.circle
+                                        [ SvgAttr.cx "254"
+                                        , SvgAttr.cy "329"
+                                        , SvgAttr.r "3"
+                                        , SvgAttr.fill "none"
+                                        , if (Zipper.current provinces).id == 51 then
+                                            SvgAttr.stroke "#00d2bc"
+
+                                          else
+                                            SvgAttr.stroke "transparent"
+                                        , SvgAttr.strokeWidth "1"
+                                        ]
+                                        []
+                                    , Svg.circle
+                                        [ SvgAttr.cx "335"
+                                        , SvgAttr.cy "356"
+                                        , SvgAttr.r "3"
+                                        , SvgAttr.fill "none"
+                                        , if (Zipper.current provinces).id == 52 then
+                                            SvgAttr.stroke "#00d2bc"
+
+                                          else
+                                            SvgAttr.stroke "transparent"
+                                        , SvgAttr.strokeWidth "1"
+                                        ]
+                                        []
                                     , Svg.path
                                         [ SvgAttr.style "fill:none;stroke:#a9a9a9;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
                                         , SvgAttr.d "m 13.5,305 174,0 0,63"
