@@ -1,7 +1,7 @@
 {
-  "name": "elm-parcel-template",
+  "name": "elm-spain-provinces",
   "version": "1.0.0",
-  "description": "",
+  "description": "A game to learn the provinces of Spain!",
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html",
