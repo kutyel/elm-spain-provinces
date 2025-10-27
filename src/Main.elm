@@ -429,8 +429,8 @@ view model =
                             [ Html.div
                                 [ Attr.class "card-body flex items-center justify-center py-8 md:py-16" ]
                                 [ Svg.svg
-                                    [ SvgAttr.width "569"
-                                    , SvgAttr.height "392"
+                                    [ SvgAttr.viewBox "0 0 569 392"
+                                    , SvgAttr.class "w-full h-auto max-w-2xl"
                                     ]
                                     [ Svg.path
                                         ([ SvgAttr.style "stroke:#1d232a;stroke-width:0.47999001000000002;stroke-linecap:square;stroke-miterlimit:10;fill-opacity:1"
