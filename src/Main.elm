@@ -300,8 +300,8 @@ allProvinces =
     , { name = "Huesca", id = 25, status = NotAsked }
     , { name = "Jaén/Jaen", id = 26, status = NotAsked }
     , { name = "La Rioja", id = 27, status = NotAsked }
-    , { name = "Las Palmas", id = 28, status = NotAsked }
-    , { name = "León/Jeon", id = 29, status = NotAsked }
+    , { name = "Las Palmas de Gran Canaria", id = 28, status = NotAsked }
+    , { name = "León/Leon", id = 29, status = NotAsked }
     , { name = "Lérida/Lerida/Lleida", id = 30, status = NotAsked }
     , { name = "Lugo", id = 31, status = NotAsked }
     , { name = "Madrid", id = 32, status = NotAsked }
