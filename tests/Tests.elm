@@ -2,58 +2,58 @@ module Tests exposing (all)
 
 import Expect
 import List.Zipper as Zipper exposing (Zipper)
-import Main exposing (Province, Status(..), getProvinceStatus)
+import Main exposing (GameItem, Status(..), getItemStatus)
 import Test exposing (Test, describe, test)
 
 
-alicante : Province
+alicante : GameItem
 alicante =
     { name = "Alicante", id = 2, status = NotAsked }
 
 
-madrid : Province
+madrid : GameItem
 madrid =
     { name = "Madrid", id = 1, status = Correct }
 
 
-valencia : Province
+valencia : GameItem
 valencia =
     { name = "Valencia", id = 3, status = Failed }
 
 
 all : Test
 all =
-    describe "getProvinceStatus tests"
-        [ test "current province is focused -> Focused" <|
+    describe "getItemStatus tests"
+        [ test "current item is focused -> Focused" <|
             \_ ->
                 let
-                    zipper : Zipper Province
+                    zipper : Zipper GameItem
                     zipper =
                         Zipper.singleton alicante
                 in
-                Expect.equal Focused (getProvinceStatus 2 zipper)
-        , test "province not yet asked -> NotAsked" <|
+                Expect.equal Focused (getItemStatus False 2 zipper)
+        , test "item not yet asked -> NotAsked" <|
             \_ ->
                 let
-                    zipper : Zipper Province
+                    zipper : Zipper GameItem
                     zipper =
                         Zipper.singleton alicante
                 in
-                Expect.equal NotAsked (getProvinceStatus 1 zipper)
-        , test "province asked and answered correctly -> Correct" <|
+                Expect.equal NotAsked (getItemStatus False 1 zipper)
+        , test "item asked and answered correctly -> Correct" <|
             \_ ->
                 let
-                    zipper : Zipper Province
+                    zipper : Zipper GameItem
                     zipper =
                         Zipper.from [ madrid ] alicante [ valencia ]
                 in
-                Expect.equal Correct (getProvinceStatus 1 zipper)
-        , test "province asked and answered incorrectly -> Failed" <|
+                Expect.equal Correct (getItemStatus False 1 zipper)
+        , test "item asked and answered incorrectly -> Failed" <|
             \_ ->
                 let
-                    zipper : Zipper Province
+                    zipper : Zipper GameItem
                     zipper =
                         Zipper.from [ madrid, valencia ] alicante []
                 in
-                Expect.equal Failed (getProvinceStatus 3 zipper)
+                Expect.equal Failed (getItemStatus False 3 zipper)
         ]
