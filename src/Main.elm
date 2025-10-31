@@ -2,7 +2,6 @@ module Main exposing (GameItem, Model, Msg, Status(..), getItemStatus, main)
 
 import Browser
 import Dict exposing (Dict)
-import Dict.Extra as Dict
 import Html exposing (Html)
 import Html.Attributes as Attr
 import Html.Events as Events
@@ -414,8 +413,15 @@ getItemStatus ccAAMode id zipper =
 
                 else
                     Zipper.before zipper
-                        |> List.find (always (Maybe.isJust <| Dict.find (always (List.member id)) communitiesWithProvinces))
-                        |> Maybe.unwrap NotAsked .status
+                        |> List.map
+                            (\p ->
+                                ( p.status
+                                , Dict.get p.name communitiesWithProvinces
+                                    |> Maybe.withDefault []
+                                )
+                            )
+                        |> List.find (\( _, provs ) -> List.member id provs)
+                        |> Maybe.unwrap NotAsked Tuple.first
 
             Nothing ->
                 NotAsked
