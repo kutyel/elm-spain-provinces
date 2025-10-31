@@ -2,6 +2,7 @@ module Main exposing (GameItem, Model, Msg, Status(..), getItemStatus, main)
 
 import Browser
 import Dict exposing (Dict)
+import Dict.Extra as Dict
 import Html exposing (Html)
 import Html.Attributes as Attr
 import Html.Events as Events
@@ -300,8 +301,8 @@ allCommunities =
     ]
 
 
-relationships : Dict String (List Int)
-relationships =
+communitiesWithProvinces : Dict String (List Int)
+communitiesWithProvinces =
     Dict.fromList
         [ ( "Andalucía/Andalucia", [ 5, 14, 18, 22, 24, 26, 33, 42 ] )
         , ( "Aragón/Aragon", [ 25, 45, 50 ] )
@@ -406,22 +407,15 @@ fillColor ccAAMode id =
 getItemStatus : Bool -> Int -> Zipper GameItem -> Status
 getItemStatus ccAAMode id zipper =
     if ccAAMode then
-        case Dict.get (Zipper.current zipper).name relationships of
+        case Dict.get (Zipper.current zipper).name communitiesWithProvinces of
             Just provinces ->
                 if List.member id provinces then
                     Focused
 
                 else
                     Zipper.before zipper
-                        |> List.map
-                            (\p ->
-                                ( p.status
-                                , Dict.get p.name relationships
-                                    |> Maybe.withDefault []
-                                )
-                            )
-                        |> List.find (\( _, provs ) -> List.member id provs)
-                        |> Maybe.unwrap NotAsked Tuple.first
+                        |> List.find (always (Maybe.isJust <| Dict.find (always (List.member id)) communitiesWithProvinces))
+                        |> Maybe.unwrap NotAsked .status
 
             Nothing ->
                 NotAsked
